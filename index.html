@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitality Health | Personalized Wellness Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --secondary: #5E35B1;
+            --accent: #FF6F00;
+            --light: #F5F5F5;
+            --dark: #212121;
+            --gray: #757575;
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background: #e65a00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 111, 0, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIwNSQ58QfteCsMarMpr_CmK2vR2F7sxox9g&s?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 10rem 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.8) 0%, rgba(94, 53, 177, 0.8) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .primary-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+        
+        .primary-btn:hover {
+            background: #1B5E20;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+        }
+        
+        .secondary-btn {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .secondary-btn:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* About Us */
+        .about-section {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+            background-image: url('https://i.postimg.cc/3JdVh2pt/About-Vitality-Health.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .about-text h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .about-features {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .about-feature i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        /* Treatments We Offer */
+        .treatments-section {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+        
+        .treatments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .treatment-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .treatment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .treatment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .treatment-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .treatment-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .treatment-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .treatment-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .treatment-price span {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-header {
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-price span {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features i {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        /* Trust Section */
+        .trust-section {
+            background: var(--light);
+            padding: 5rem 0;
+        }
+        
+        .trust-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .trust-text {
+            max-width: 500px;
+        }
+        
+        .trust-text h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .badge {
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .badge i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .trust-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .medication-showcase {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .med-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .med-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .med-item svg {
+            width: 80px;
+            height: 120px;
+            margin-bottom: 1rem;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .step h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* Conditions */
+        .conditions {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+        
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .condition-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .condition-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        
+        .condition-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .condition-content {
+            padding: 1.5rem;
+        }
+        
+        .condition-content h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .condition-content p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1.5rem 0;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            margin-top: 1rem;
+            color: var(--gray);
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #1B5E20 100%);
+            padding: 5rem 0;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-col ul li a {
+            color: #bdbdbd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #424242;
+            color: #9e9e9e;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .steps {
+                gap: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 6rem 0;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .about-section, .treatments-section, .pricing-section, .trust-section, .how-it-works, .conditions, .faq, .cta-section {
+                padding: 3rem 0;
+            }
+            
+            .treatments-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .medication-showcase {
+                gap: 1rem;
+            }
+            
+            .med-item {
+                padding: 1rem;
+            }
+            
+            .med-item svg {
+                width: 60px;
+                height: 90px;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .primary-btn, .secondary-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .trust-badges {
+                justify-content: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Vitality Health</a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Treatments</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#" class="cta-button">Get Started</a></li>
+                </ul>
+                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Health Journey</h1>
+                <p>Personalized wellness solutions delivered to your door. Science-backed treatments for a healthier, more vibrant you.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="primary-btn">Free Consultation</a>
+                    <a href="#" class="secondary-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image"></div>
+                <div class="about-text">
+                    <h2>About Vitality Health</h2>
+                    <p>We're revolutionizing healthcare by making personalized wellness treatments accessible and convenient. Our team of licensed healthcare providers combines cutting-edge science with compassionate care to deliver treatments that truly transform lives.</p>
+                    <p>Founded with the mission to democratize access to advanced wellness solutions, we've helped over 50,000 patients achieve their health goals through our innovative telehealth platform.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-user-md"></i>
+                            <span>Licensed Providers</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-award"></i>
+                            <span>Science-Backed</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-heart"></i>
+                            <span>Patient-Centered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatments We Offer -->
+    <section class="treatments-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Treatments We Offer</h2>
+                <p>Comprehensive wellness solutions tailored to your unique health needs</p>
+            </div>
+            
+            <div class="treatments-grid">
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-weight" style="color: #4CAF50;"></i>
+                    </div>
+                    <h3>GLP-1 Treatments</h3>
+                    <p>Science-backed weight management solutions tailored to your body's needs</p>
+                    <div class="treatment-price">$299<span>/month</span></div>
+                    <a href="#" class="secondary-btn">Learn More</a>
+                    <div class="rx-badge">Rx only</div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-dumbbell" style="color: #8D6E63;"></i>
+                    </div>
+                    <h3>Sermorelin Therapy</h3>
+                    <p>Support muscle growth, recovery, and overall physical performance</p>
+                    <div class="treatment-price">$399<span>/month</span></div>
+                    <a href="#" class="secondary-btn">Learn More</a>
+                    <div class="rx-badge">Rx only</div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-battery-full" style="color: #2196F3;"></i>
+                    </div>
+                    <h3>NAD+ Therapy</h3>
+                    <p>Boost energy, enhance cognitive function, and support healthy aging</p>
+                    <div class="treatment-price">$499<span>/month</span></div>
+                    <a href="#" class="secondary-btn">Learn More</a>
+                    <div class="rx-badge">Rx only</div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-sun" style="color: #FF9800;"></i>
+                    </div>
+                    <h3>MIC+B12</h3>
+                    <p>Boost mood and energy levels with our essential nutrient therapy</p>
+                    <div class="treatment-price">$199<span>/month</span></div>
+                    <a href="#" class="secondary-btn">Learn More</a>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-venus" style="color: #E91E63;"></i>
+                    </div>
+                    <h3>Hormone Therapy</h3>
+                    <p>Personalized women's hormone balance solutions for optimal wellness</p>
+                    <div class="treatment-price">$349<span>/month</span></div>
+                    <a href="#" class="secondary-btn">Learn More</a>
+                    <div class="rx-badge">Rx only</div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-icon">
+                        <i class="fas fa-shield-alt" style="color: #9C27B0;"></i>
+                    </div>
+                    <h3>Glutathione</h3>
+                    <p>Potent antioxidant support for cellular health and detoxification</p>
+                    <div class="treatment-price">$249<span>/month</span></div>
+                    <a href="#" class="secondary-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transparent Pricing</h2>
+                <p>No hidden fees. No insurance required. Just clear, affordable pricing for your wellness journey.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter Plan</h3>
+                        <div class="pricing-price">$149<span>/month</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Basic consultation</li>
+                        <li><i class="fas fa-check"></i> One treatment included</li>
+                        <li><i class="fas fa-check"></i> Monthly check-ins</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                    </ul>
+                    <a href="#" class="secondary-btn">Get Started</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>Popular Plan</h3>
+                        <div class="pricing-price">$299<span>/month</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Comprehensive consultation</li>
+                        <li><i class="fas fa-check"></i> Two treatments included</li>
+                        <li><i class="fas fa-check"></i> Bi-weekly check-ins</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Treatment adjustments</li>
+                    </ul>
+                    <a href="#" class="primary-btn">Get Started</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Premium Plan</h3>
+                        <div class="pricing-price">$499<span>/month</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> VIP consultation</li>
+                        <li><i class="fas fa-check"></i> All treatments included</li>
+                        <li><i class="fas fa-check"></i> Weekly check-ins</li>
+                        <li><i class="fas fa-check"></i> 24/7 support</li>
+                        <li><i class="fas fa-check"></i> Custom treatment plan</li>
+                        <li><i class="fas fa-check"></i> Lab monitoring</li>
+                    </ul>
+                    <a href="#" class="secondary-btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-content">
+                <div class="trust-text">
+                    <h2>Trusted by 50,000+ Patients</h2>
+                    <p>Your medications, delivered. No insurance needed, no appointments required.</p>
+                    
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>Licensed Pharmacy</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Free Delivery</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>FDA Approved</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trust-image">
+                    <div class="medication-showcase">
+                        <div class="med-item">
+                            <!-- Pill Bottle SVG -->
+                            <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="20" y="40" width="60" height="90" rx="5" fill="#E0F2F1" stroke="#4DB6AC" stroke-width="2"/>
+                                <rect x="30" y="30" width="40" height="20" rx="3" fill="#B2DFDB"/>
+                                <rect x="35" y="20" width="30" height="15" rx="2" fill="#80CBC4"/>
+                                <circle cx="50" cy="85" r="15" fill="#4DB6AC" opacity="0.3"/>
+                                <rect x="40" y="80" width="20" height="10" rx="2" fill="#4DB6AC"/>
+                            </svg>
+                            <h4>Prescription</h4>
+                        </div>
+                        
+                        <div class="med-item">
+                            <!-- Vial SVG -->
+                            <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="35" y="40" width="30" height="80" rx="15" fill="#E8EAF6" stroke="#7986CB" stroke-width="2"/>
+                                <rect x="40" y="30" width="20" height="15" rx="2" fill="#C5CAE9"/>
+                                <rect x="45" y="20" width="10" height="15" rx="1" fill="#9FA8DA"/>
+                                <rect x="40" y="60" width="20" height="40" fill="#7986CB" opacity="0.3"/>
+                                <rect x="45" y="70" width="10" height="20" fill="#7986CB"/>
+                            </svg>
+                            <h4>Injectable</h4>
+                        </div>
+                        
+                        <div class="med-item">
+                            <!-- Nasal Spray SVG -->
+                            <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="30" y="60" width="40" height="60" rx="5" fill="#FFF3E0" stroke="#FFB74D" stroke-width="2"/>
+                                <rect x="35" y="50" width="30" height="15" rx="3" fill="#FFE0B2"/>
+                                <rect x="40" y="40" width="20" height="15" rx="2" fill="#FFCC80"/>
+                                <rect x="45" y="30" width="10" height="15" rx="1" fill="#FFB74D"/>
+                                <circle cx="50" cy="90" r="8" fill="#FFB74D" opacity="0.3"/>
+                                <rect x="47" y="87" width="6" height="6" fill="#FFB74D"/>
+                            </svg>
+                            <h4>Nasal Spray</h4>
+                        </div>
+                        
+                        <div class="med-item">
+                            <!-- Pump Bottle SVG -->
+                            <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M30 80 L30 120 Q30 130 40 130 L60 130 Q70 130 70 120 L70 80 Z" fill="#E1F5FE" stroke="#4FC3F7" stroke-width="2"/>
+                                <rect x="40" y="70" width="20" height="15" rx="2" fill="#B3E5FC"/>
+                                <rect x="45" y="60" width="10" height="15" rx="1" fill="#81D4FA"/>
+                                <rect x="47" y="50" width="6" height="15" rx="1" fill="#4FC3F7"/>
+                                <circle cx="50" cy="100" r="10" fill="#4FC3F7" opacity="0.3"/>
+                                <rect x="47" y="97" width="6" height="6" fill="#4FC3F7"/>
+                            </svg>
+                            <h4>Topical</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Simple, convenient, and personalized healthcare in four easy steps</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Online Consultation</h3>
+                    <p>Complete a simple health questionnaire and connect with our licensed providers</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Personalized Plan</h3>
+                    <p>Receive a customized treatment plan tailored to your specific health goals</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Your medications are shipped directly to your door in discreet packaging</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Ongoing Support</h3>
+                    <p>Access continuous care and follow-ups with our healthcare team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conditions -->
+    <section class="conditions">
+        <div class="container">
+            <div class="section-header">
+                <h2>Wellness Solutions</h2>
+                <p>Comprehensive treatments for your health and wellness needs</p>
+            </div>
+            
+            <div class="conditions-grid">
+                <div class="condition-card">
+                    <div class="condition-img" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="condition-content">
+                        <h3>Energy & Vitality</h3>
+                        <p>Combat fatigue and boost your natural energy levels with our targeted treatments</p>
+                        <a href="#" class="secondary-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="condition-card">
+                    <div class="condition-img" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="condition-content">
+                        <h3>Hormone Balance</h3>
+                        <p>Restore optimal hormone levels for improved mood, energy, and overall wellness</p>
+                        <a href="#" class="secondary-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="condition-card">
+                    <div class="condition-img" style="background-image: url('https://i.postimg.cc/LshyppGx/Anti-Aging.jpg?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="condition-content">
+                        <h3>Anti-Aging</h3>
+                        <p>Support healthy aging with our advanced cellular rejuvenation therapies</p>
+                        <a href="#" class="secondary-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="condition-card">
+                    <div class="condition-img" style="background-image: url('https://i.postimg.cc/T2mQJQVX/Skin-Health.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="condition-content">
+                        <h3>Skin Health</h3>
+                        <p>Achieve radiant, youthful skin with our advanced skincare formulations</p>
+                        <a href="#" class="secondary-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I need a prescription for these treatments?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all our treatments require a prescription. Our licensed healthcare providers will evaluate your health profile and determine if these treatments are appropriate for you during the consultation process.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How quickly will I receive my medications?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Once your treatment plan is approved, we typically ship within 1-2 business days. Delivery times vary by location but most patients receive their medications within 3-5 business days.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are these treatments covered by insurance?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our services are designed to be affordable without insurance. We offer transparent pricing and payment plans to make these treatments accessible. Some insurance plans may provide partial reimbursement - we can provide documentation for you to submit.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is my personal health information secure?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We use industry-leading encryption and security measures to protect your personal health information. Our platform is HIPAA compliant and we never share your information with third parties without your explicit consent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Start Your Wellness Journey Today</h2>
+            <p>Join thousands of patients who have transformed their health with our personalized approach. Take the first step toward a healthier, more vibrant you.</p>
+            <a href="#" class="primary-btn" style="background: var(--white); color: var(--primary);">Get Your Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Vitality Health</h3>
+                    <p>Personalized wellness solutions delivered with care. Science-backed treatments for your health journey.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Treatments</h3>
+                    <ul>
+                        <li><a href="#">GLP-1 Treatments</a></li>
+                        <li><a href="#">Sermorelin Therapy</a></li>
+                        <li><a href="#">NAD+ Therapy</a></li>
+                        <li><a href="#">Hormone Balance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Our Providers</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Vitality Health. All rights reserved By Zannatul. This website is for informational purposes only and does not constitute medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.backgroundColor = 'var(--white)';
+            navLinks.style.padding = '1rem';
+            navLinks.style.boxShadow = 'var(--shadow)';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
